@@ -6,32 +6,39 @@
   <title>emojitomovie.io</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>emojitomovie.io</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
   <div class="container">
-    <h1>🎬 emojitomovie.io</h1>
+    <div class="header-block">
+      <h1>emojitomovie.io</h1>
+      <div id="search-area">
+        <input
+          type="text"
+          id="emoji-search"
+          placeholder="Start typing..."
+        />
+      </div>
+    </div> <!-- ✅ close the header-block -->
 
-    
+    <!-- Emoji section -->
+    <div id="emoji-section">
+      <div class="emoji-grid" id="random-emojis"></div>
+      <div id="emoji-results"></div>
+    </div>
 
-
-    
-<div id="search-area">
-  <input
-      type="text"
-      id="emoji-search"
-      placeholder="🔍 Search emoji or mood..."
-    />
-</div>
-
-<!-- Wrap this whole block 👇 -->
-<div id="emoji-section">
-  <div class="emoji-grid" id="random-emojis"></div>
-  <div id="emoji-results"></div>
-</div>
-
-<!-- This will take over when an emoji is picked -->
-<div id="movie-result" class="hidden"></div>
-
+    <!-- Movie result -->
+    <div id="movie-result" class="hidden"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
+

@@ -9,9 +9,9 @@ body {
 
 /* -------- Container -------- */
 .container {
-  max-width: 720px;
+  max-width: 1440px;
   margin: 60px auto;
-  padding: 0 20px;
+  padding: 0 40px;
   text-align: center;
 }
 
@@ -40,76 +40,109 @@ h1 {
   color: #374151;
 }
 
+.header-block {
+  margin-bottom: 0px; /* you can tweak this down to 24px or up to 48px if needed */
+}
+
+.header-block h1 {
+  margin-bottom: 32px; /* reduce space between title and search */
+}
+
 /* -------- Search Bar -------- */
 #emoji-search {
   width: 100%;
-  max-width: 400px;
-  padding: 12px 18px;
-  font-size: 1rem;
+  max-width: 600px;
+  padding: 18px 24px;
+  font-size: 1.25rem;
   border: 1px solid #d1d5db;
   border-radius: 9999px;
   outline: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  margin-bottom: 32px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  margin-bottom: 48px;
   transition: 0.2s ease;
 }
 
 #emoji-search:focus {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.2);
 }
 
-/* -------- Emoji Grid -------- */
+
+
+/* 🔲 Wrapper to help center and size the emoji grid */
+.emoji-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* 🎲 Grid layout */
 .emoji-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  margin: 40px auto;
-  max-width: 520px;
-  justify-content: center;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  padding: 40px 0;
+  width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .emoji-grid {
     grid-template-columns: repeat(4, 1fr);
-    max-width: 400px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .emoji-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    max-width: 320px;
   }
 }
 
-/* -------- Emoji Buttons -------- */
+/* 🧸 Emoji Buttons */
 .emoji-grid button {
-  font-size: 2.5rem;
-  padding: 24px;
-  background: #ffffff;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: clamp(3rem, 6vw, 8rem); /* 🔥 responsive size */
+  background: #fff;
   border: 2px solid #e5e7eb;
   border-radius: 20px;
-  cursor: pointer;
-  transition: transform 0.1s ease, background 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  padding: 0;
 }
 
 
 .emoji-grid button:hover {
-  background-color: #f3f4f6;
   transform: scale(1.05);
+  background-color: #f3f4f6;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 480px) {
-  .emoji-grid button {
-    font-size: 2rem;
-    padding: 20px;
-  }
+.emoji-btn {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: clamp(3rem, 6vw, 8rem);
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  padding: 0;
 }
+
+
 
 /* -------- Result Area -------- */
 #movie-result {
@@ -182,4 +215,5 @@ h1 {
 .hidden {
   display: none !important;
 }
+
 

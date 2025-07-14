@@ -193,7 +193,7 @@ function rateMovie(emoji, title, isPositive) {
   `;
 }
 
-function renderRandomEmojis(list, count = 25) {
+function renderRandomEmojis(list, count = 30) {
   const shuffled = [...list].sort(() => 0.5 - Math.random());
   const selection = shuffled.slice(0, count);
 
@@ -202,19 +202,14 @@ function renderRandomEmojis(list, count = 25) {
 
   selection.forEach((e) => {
     const btn = document.createElement("button");
+    btn.className = "emoji-btn"; // 👈 use a CSS class
     btn.textContent = e.emoji;
     btn.title = e.description || "";
-    btn.style.fontSize = "1.8rem";
-    btn.style.margin = "6px";
-    btn.style.padding = "8px 12px";
-    btn.style.border = "none";
-    btn.style.cursor = "pointer";
-    btn.style.borderRadius = "8px";
-    btn.style.background = "#f3f4f6";
     btn.addEventListener("click", () => handleEmojiClick(e.emoji));
     container.appendChild(btn);
   });
 }
+
 
 function fetchMoviePoster(title) {
   const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=c7cc0527`;
